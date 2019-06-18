@@ -28,7 +28,7 @@ const GodSchema = new Schema({
   emblems: [
     {
       type: Schema.Types.ObjectId,
-      ref: "emblem"
+      ref: "emblems"
     }
   ],
   parents: [
@@ -45,7 +45,7 @@ const GodSchema = new Schema({
   ],
   siblings: [
     {
-      types: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "god"
     }
   ]

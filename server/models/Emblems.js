@@ -14,3 +14,5 @@ const EmblemsSchema = new Schema({
     }
   ]
 })
+
+module.exports = mongoose.model("emblems", EmblemsSchema)

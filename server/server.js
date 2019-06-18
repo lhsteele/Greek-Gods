@@ -1,7 +1,10 @@
 const express = require("express");
+const models = require("./models");
+const expressGraphQL = require("express-graphql");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const db = require("../config/keys.js").MONGO_URI;
+const schema = require("./schema/schema");
 
 const app = express();
 
@@ -15,6 +18,16 @@ mongoose
   .catch(err => console.log(err));
 
 app.use(bodyParser.json());
+
+
+
+app.use(
+  "/graphql",
+  expressGraphQL({
+    schema, 
+    graphiql: true
+  })
+);
 
 module.exports = app;
 
